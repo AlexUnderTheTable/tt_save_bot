@@ -1,0 +1,18 @@
+[Unit]
+Description=TikTok Video Download Telegram Bot
+After=network.target
+
+[Service]
+Type=simple
+User=tgbot
+WorkingDirectory=/home/tgbot/tt_save_bot
+Environment="PATH=/home/tgbot/tt_save_bot/venv/bin"
+Environment="PYTHONUNBUFFERED=1"
+ExecStart=/home/tgbot/tt_save_bot/venv/bin/python -m bot.main
+Restart=on-failure
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
