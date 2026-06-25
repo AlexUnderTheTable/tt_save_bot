@@ -5,8 +5,8 @@ from pathlib import Path
 from aiogram import Bot, Dispatcher
 from aiogram.types import BotCommand
 
-from config import BOT_TOKEN, LOG_LEVEL, DOWNLOAD_DIR
-from handlers import video
+from .config import BOT_TOKEN, LOG_LEVEL, DOWNLOAD_DIR
+from .handlers import video
 
 log_dir = Path("logs")
 log_dir.mkdir(exist_ok=True)
@@ -46,7 +46,7 @@ async def set_commands(bot: Bot):
 async def cleanup_task():
     while True:
         try:
-            from services.tiktok import cleanup_old_files
+            from .services.tiktok import cleanup_old_files
             cleanup_old_files()
             await asyncio.sleep(3600)  # Каждый час
         except Exception as e:

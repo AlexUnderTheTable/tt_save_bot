@@ -4,7 +4,7 @@ import os
 import time
 from pathlib import Path
 from yt_dlp import YoutubeDL
-from config import DOWNLOAD_DIR, MAX_FILE_SIZE, PROXY_URL, DOWNLOAD_TIMEOUT
+from ..config import DOWNLOAD_DIR, MAX_FILE_SIZE, PROXY_URL, DOWNLOAD_TIMEOUT
 
 logger = logging.getLogger(__name__)
 
